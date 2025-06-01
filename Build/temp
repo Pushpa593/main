@@ -1,0 +1,39 @@
+public class EmployeeApplication
+{
+public static void main(String[] args) 
+{
+SpringApplication.run(EmployeeApplication.class,args);
+}
+}
+public class Employee {
+private Long id;
+private String name;
+private String department;
+private double salary;
+}
+public interface EmployeeService {
+List<employee> getAllEmployees();
+Employee get EmployeeById(Long id);
+Employee addEmployee(Employee employee);
+Employee updateEmployee(Long id, Employee employee);
+void deleteEmployee(Long id);
+}
+public class EmployeeController {
+private final EmployeeService service;
+public List<employee> getAll() {
+return service.getAllEmployees();
+}
+public Employee getById {
+return service.getEmployeeById(id);
+}
+public employee create {
+return service.addEmployee(employee);
+}
+public Employee update {
+return service.updateEmployee(id, employee);
+}
+public responseEntity<void> {
+sevice.deleteEmployee(id);
+return ResponseEntity.noContent().build();
+}
+}
